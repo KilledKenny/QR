@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"github.com/fatih/color"
 	"io/ioutil"
 	"log"
 	"os"
@@ -37,6 +38,8 @@ func args() {
 }
 func main() {
 	//args()
+	color.Set(color.FgWhite, color.BgBlack)
+	defer color.Unset()
 	var err error
 	in := strings.Join(os.Args[1:], " ")
 	if len(os.Args) == 1 {
