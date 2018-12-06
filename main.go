@@ -38,7 +38,6 @@ func args() {
 }
 func main() {
 	//args()
-	color.Set(color.FgWhite, color.BgBlack)
 	defer color.Unset()
 	var err error
 	in := strings.Join(os.Args[1:], " ")
@@ -54,6 +53,7 @@ func main() {
 		log.Fatal(err)
 	}
 	for x := -2; x < c.Size+2; x = x + 2 {
+		color.Set(color.FgWhite, color.BgBlack)
 		for y := -2; y < c.Size+2; y++ {
 			fmt.Printf(blocks[[2]bool{
 				c.Black(x, y),
@@ -61,6 +61,7 @@ func main() {
 			}])
 			//fmt.Printf(q)
 		}
+		color.Unset()
 		fmt.Println("")
 	}
 }
